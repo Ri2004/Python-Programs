@@ -1,0 +1,52 @@
+print ("Game Start!")
+user_win = 0
+comp_win = 0
+
+import random
+
+for i in range(1,4):
+    print("Round",i)
+    
+    user = input("""1. Rock \n2. Paper \n3. Scissor: """)
+    comp = random.choice(["Rock", "Paper", "Scissor"])
+    print()
+    print("Comp:", comp)
+    print()
+    
+    if user == "Rock":
+        
+        if comp == "Rock":
+            user_win == comp_win
+        elif comp == "Paper":
+            comp_win = comp_win+1
+        elif comp == "Scissor":
+            user_win = user_win+1
+            
+    elif user == "Paper":
+        
+        if comp == "Rock":
+            user_win = user_win+1
+        elif comp == "Paper":
+            user_win == comp_win
+        elif comp == "Scissor":
+            comp_win = comp_win+1
+            
+    elif user == "Scissor":
+        
+        if comp == "Rock":
+            comp_win = comp_win+1
+        elif comp == "Paper":
+            user_win = user_win+1
+        elif comp == "Scissor":
+            user_win == comp_win
+            
+    else:
+        print("Invalid Input")
+    
+if user_win > comp_win:
+    print("User Win")
+elif user_win < comp_win:
+    print("Comp Win")
+elif user_win == comp_win:
+    print("Match Tie")
+    
