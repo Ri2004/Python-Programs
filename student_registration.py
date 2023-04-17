@@ -4,7 +4,6 @@ print("Technique Polytechnic Institute")
 college = {}
 
 fee = 0
-
 print()
 while True:
     print("Student Registration Form")
@@ -33,7 +32,6 @@ while True:
             print("\nStudent is successfully registered\n")
         
         print()
-        
         print(college)
         
     elif student == "2":
@@ -42,28 +40,21 @@ while True:
         aadhar_number = input("Enter Aadhar Number: ")
               
         if aadhar_number in college:
-            
             fee = int(input("Enter Fee: "))
-            
+            print()
             print("Fee is successfully submitted")
-            
             college[aadhar_number][-1] = fee
             
             print(college)
             
-            
         else : print("Not in College")
     
     elif student == "3":
-        
         print("Principal Access")
-        
         principal_code = "colltpi123"
-        
         principal_code = input("Enter Principal Code: ")
-    
+        
         if principal_code == "colltpi123":
-            
             aadhar_number = input("Enter Aadhar Number: ")
             
             if aadhar_number in college:
@@ -78,7 +69,6 @@ while True:
             print("Invalid Code")
             
     elif student == "4": 
-        
         break
     
 print("Thank You")
