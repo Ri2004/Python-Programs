@@ -4,6 +4,7 @@ print("Technique Polytechnic Institute")
 college = {}
 
 fee = 0
+
 print()
 while True:
     print("Student Registration Form")
