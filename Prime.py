@@ -8,10 +8,8 @@ if n>0:
             break
     if prime:
         print(f"{n} is prime number")
-        print(type(prime))
     else:
         print(f"{n} is not prime number")
-        print(prime)
         
 else:
     print("wrong input")
