@@ -6,7 +6,7 @@ dig = 0
 while num>0:
     digit = num%10
     rem = digit**num_length
-    dig = dig+rem  # 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208, 9474, 54748,
+    dig = dig+rem  
     num = num//10
     
 if temp == dig:
