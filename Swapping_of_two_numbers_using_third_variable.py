@@ -1,5 +1,5 @@
-a = 35
-b = 25
+a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
 
 print(f"Before Swapping a = {a} and b = {b}")
 
