@@ -1,6 +1,11 @@
 import math
 def is_perfect_square(n):
-    s = int(math.sqrt(n))
+    s = int(math.sqrt(n)) 
+    
+    ''' 
+    We also square root without math module like s = int(n**0.5)
+    '''
+    
     return s*s == n
 
 def check_fibonacci(num):
