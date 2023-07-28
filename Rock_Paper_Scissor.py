@@ -1,8 +1,7 @@
+import random 
 print ("Game Start!")
 user_win = 0
 comp_win = 0
-
-import random
 
 for i in range(1,4):
     print("Round",i)
