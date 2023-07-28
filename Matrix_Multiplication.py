@@ -33,7 +33,7 @@ else:
         print(s)
         
     print()
-    print("2nd MAtrix:")
+    print("2nd Matrix:")
     for t in matrix2:
         print(t)
     
@@ -43,8 +43,8 @@ else:
         for y in range(cols2):
             sum = 0
             resultant_matrix = []
-            for z in range(0, rows1+1 and cols2+1):
-                sum = sum + (matrix1[x][z] * matrix2[z][y])
+            for z in range(0, rows1 and cols2):
+                sum = sum + (matrix1[x][z] * matrix2[z][y]) 
             resultant_matrix.append(sum)
             print(resultant_matrix, end="")
         print()
