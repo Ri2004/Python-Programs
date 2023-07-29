@@ -44,8 +44,8 @@ for i in range(1,4):
     
 if user_win > comp_win:
     print("User Win")
-elif user_win < comp_win:
+if user_win < comp_win:
     print("Comp Win")
-elif user_win == comp_win:
+if user_win == comp_win:
     print("Match Tie")
     
