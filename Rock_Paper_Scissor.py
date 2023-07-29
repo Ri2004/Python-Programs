@@ -15,7 +15,7 @@ for i in range(1,4):
     if user == "Rock":
         
         if comp == "Rock":
-            user_win == comp_win
+            pass
         elif comp == "Paper":
             comp_win = comp_win+1
         elif comp == "Scissor":
@@ -26,7 +26,7 @@ for i in range(1,4):
         if comp == "Rock":
             user_win = user_win+1
         elif comp == "Paper":
-            user_win == comp_win
+            pass
         elif comp == "Scissor":
             comp_win = comp_win+1
             
@@ -37,7 +37,7 @@ for i in range(1,4):
         elif comp == "Paper":
             user_win = user_win+1
         elif comp == "Scissor":
-            user_win == comp_win
+            pass
             
     else:
         print("Invalid Input")
