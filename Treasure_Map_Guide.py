@@ -7,6 +7,6 @@ position = input("Where do you want to put the treasure? ")
 
 column_number = int(position[0])
 row_number = int(position[1])
-map[row_number-1][column_number-1] = 'X'
+map[row_number-1][column_number-1] = "X"
 
 print(f"{row1}\n{row2}\n{row3}")
