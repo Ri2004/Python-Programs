@@ -1,8 +1,11 @@
-a,b,c,d,e = int(input("Enter Number: ")),int(input("Enter Number: ")),int(input("Enter Number: ")),int(input("Enter Number: ")),int(input("Enter Number: "))
-list = [a,b,c,d,e]
-min = list[0]
-for i in range(1,len(list)):
-    if min > list[i]:
-        min = list[i]
-        
-print(f"Maximum Value From the list is: {min}")
+student_scores = input("Input a list of student scores ").split()
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+print(student_scores)
+
+lowest_score = 0
+for min_num in student_scores:
+    if min_num > lowest_score:
+        lowest_score = min_num 
+
+print(f"The highest score in the class is: {lowest_score}")
