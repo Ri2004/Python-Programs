@@ -1,5 +1,8 @@
 # Guess the Number
 import random
+from Guess_Number_Logo import logo
+print(logo)
+
 print("Let me think a Number between 1 to 50")
 chosen_number = random.randint(1, 50)
 print(chosen_number)
