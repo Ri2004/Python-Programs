@@ -5,7 +5,6 @@ print(logo)
 
 print("Let me think a Number between 1 to 50")
 chosen_number = random.randint(1, 50)
-print(chosen_number)
 
 easy_level_attempts = 10
 hard_level_attempts = 5
@@ -17,6 +16,9 @@ def check_level(level):
     elif level == 'hard':
         print(f"You've {hard_level_attempts} attempts to guess the number.")
         return hard_level_attempts
+    
+    else:
+        print("You Chose wrong level")
     
 level = input("Choose the difficulty level... Type easy or hard: ").lower()
 attempts = check_level(level)
