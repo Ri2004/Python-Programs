@@ -1,4 +1,4 @@
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 #TODO-1: Import and print the logo from art.py when the program starts.
 from caesar_cipher_art import logo
@@ -12,10 +12,10 @@ def caesar(start_text, shift_amount, direction_value):
         if letter in alphabet:
             position = alphabet.index(letter)
             if direction_value == "decode":
-                new_position = position - shift_amount
+                new_position = (position - shift_amount)%26
                 after_text += alphabet[new_position]
             else:
-                new_position = position + shift_amount
+                new_position = (position + shift_amount)%26
                 after_text += alphabet[new_position]
         else:
             after_text += letter
@@ -37,8 +37,6 @@ while end_game:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-
-    shift %= len(alphabet)
 
     # TODO-11: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
     caesar(start_text=text, shift_amount=shift, direction_value=direction)
