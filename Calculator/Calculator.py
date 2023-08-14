@@ -1,13 +1,6 @@
-
-
-
-
-
-
 from calculator_art import logo
+from replit import clear
 print(logo)
-
-end_calculation = False
 
 def add(n1, n2):
     return n1+n2
@@ -28,28 +21,26 @@ calculator_operators = {
     '/': divide
 }
 
-num1 = int(input("What is the first number? "))
+def calculator():
+    num1 = float(input("What is the first number? "))
 
-for symbol in calculator_operators:
-    print(symbol)
+    for symbol in calculator_operators:
+        print(symbol)
 
-operator_symbol = input("Pick a symbol from the above line: ")
-num2 = int(input("What is the second number? "))
-calculation = calculator_operators[operator_symbol]
-answer = calculation(num1, num2)
-first_answer = answer
-
-print(f"{num1} {operator_symbol} {num2} = {answer}")
-
-while not end_calculation:
-    choice = input(f"Type 'y' to calculating with {answer}, or type 'n' to exit.: ").lower()
-    if choice == 'y':
-        operator_symbol = input("Pick another symbol: ")
-        num3 = int(input("What is next number? "))
+    end_calculation = False
+    while not end_calculation:
+        operator_symbol = input("Pick a symbol from the above line: ")
+        num2 = float(input("What is the next number? "))
         calculation = calculator_operators[operator_symbol]
-        answer = calculation(answer, num3)
-        next_answer = answer
-        print(f"{answer} {operator_symbol} {num3} = {next_answer}")
+        answer = calculation(num1, num2)
 
-    else:
-        end_calculation = True
+        print(f"{num1} {operator_symbol} {num2} = {answer}")
+
+        if input(f"Type 'y' to calculating with {answer}, or type 'n' to start a new calculation.: ").lower() == 'y':
+            num1 = answer
+        else:
+            clear()
+            end_calculation = True
+            calculator()
+
+calculator()
