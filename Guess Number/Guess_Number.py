@@ -9,6 +9,7 @@ chosen_number = random.randint(1, 50)
 
 easy_level_attempts = 10
 hard_level_attempts = 5
+
 def check_level(level):
     if level == 'easy':
         print(f"You've {easy_level_attempts} attempts to guess the number.")
