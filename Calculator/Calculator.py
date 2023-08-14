@@ -1,3 +1,4 @@
+# Calculator project
 from calculator_art import logo
 from replit import clear
 print(logo)
