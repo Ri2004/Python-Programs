@@ -1,6 +1,7 @@
 # Guess the Number
 import random
 from Guess_Number_Logo import logo
+print("Welcome to the Number Guessing game!")
 print(logo)
 
 print("Let me think a Number between 1 to 50")
@@ -45,4 +46,4 @@ while guess != chosen_number:
             exit(0)
             
     else:
-        print("Your guess is right....")
+        print(f"You got it. The answer is {guess}.")
