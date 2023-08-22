@@ -1,8 +1,11 @@
 import random
 from game_logo import logo,vs
 from game_data import data
-
+import os
 print(logo)
+
+def printLogo():
+  print(logo)
 
 score = 0
 chosen_first_data = random.choice(data)
@@ -33,4 +36,6 @@ if answer == "A" and A>B:
   score += 1
   print(f"You're right! Current score: {score}.")
 else:
+  os.system('clear')
+  printLogo()
   print(f"Sorry, that's wrong. Final score: {score}")
