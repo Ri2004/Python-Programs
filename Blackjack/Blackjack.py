@@ -17,7 +17,7 @@
 ## Cards are not removed from the deck as they are drawn.
 ## The computer is the dealer.
 
-# from replit import clear
+import os
 from blackjack_art import logo
 import random
 
@@ -90,5 +90,5 @@ def game():
 
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
-    # clear()
+    os.system('clear')
     game()
