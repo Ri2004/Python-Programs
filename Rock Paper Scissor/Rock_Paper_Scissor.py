@@ -1,4 +1,6 @@
-import random 
+import random
+from art import logo
+print(logo) 
 print ("Game Start!")
 user_win = 0
 comp_win = 0
