@@ -1,13 +1,12 @@
-a = int(input("Enter Number: "))
-b = int(input("Enter Number: "))
-c = int(input("Enter Number: "))
-d = int(input("Enter Number: "))
-e = int(input("Enter Number: "))
-f = int(input("Enter Number: "))
-g = int(input("Enter Number: "))
+def checkNum(lis, target):
+    for i in range(len(lis)):
+        if lis[i] == target:
+            return i
+    
+    return -1
 
-list = [a,b,c,d,e,f,g]
-r = int(input("Enter A Number: "))
-for i in range(len(list)):
-    if r == list[i]:
-        print(f"The Number in list is found {i+1} position")
+num = input().split()
+num = list(map(int, num))
+target = int(input("Enter Target Value: "))
+result = checkNum(num, target)
+print(result)
