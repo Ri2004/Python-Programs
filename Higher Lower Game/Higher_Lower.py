@@ -2,6 +2,14 @@ import random
 from game_logo import logo,vs
 from game_data import data
 import os
+
+def formatName(account_data):
+  account_name = account_data["name"]
+  account_description = account_data["description"]
+  account_country = account_data["country"]
+  
+  return f"{account_name}, a {account_description}, from {account_country}."
+
 print(logo)
 
 def printLogo():
@@ -10,32 +18,40 @@ def printLogo():
 score = 0
 chosen_first_data = random.choice(data)
 
-print("Compare A:",end=" ")
-for key1 in chosen_first_data:
-  if key1 != "follower_count":
-    print(f"{chosen_first_data[key1]},",end=" ")
-
-print()
+print(f"Compare A: {formatName(chosen_first_data)}")
 
 print(vs)
 
-print("Against B: ",end=" ")
 chosen_second_data = random.choice(data)
+print(f"Against B: {formatName(chosen_second_data)}")
 
-for key2 in chosen_second_data:
-  if key2 != "follower_count":
-    print(f"{chosen_second_data[key2]},",end=" ")
-
-print()
-
+if chosen_first_data == chosen_second_data:
+  chosen_second_data = random.choice(data)
+  
 A = chosen_first_data["follower_count"]
 B = chosen_second_data["follower_count"]
 
-answer = input("Who has more followers? Type 'A' or 'B': ")
-if answer == "A" and A>B:
-  score += 1
-  print(f"You're right! Current score: {score}.")
-else:
-  os.system('clear')
-  printLogo()
-  print(f"Sorry, that's wrong. Final score: {score}")
+is_game_over = False
+while not is_game_over:
+  answer = input("Who has more followers? Type 'A' or 'B': ")
+  if answer == "A" and A>B:
+    score += 1
+    os.system('clear')
+    printLogo()
+    print(f"You're right! Current score: {score}.")
+  
+    chosen_first_data = chosen_second_data.copy()
+    print(f"Compare A: {formatName(chosen_first_data)}")
+  
+    print(vs)
+    chosen_second_data = random.choice(data)
+
+    if chosen_first_data == chosen_second_data:
+      chosen_second_data = random.choice(data)
+      
+    print(f"Against B: {formatName(chosen_second_data)}")
+  else:
+    os.system('clear')
+    printLogo()
+    print(f"Sorry, that's wrong. Final score: {score}")
+    is_game_over = True
