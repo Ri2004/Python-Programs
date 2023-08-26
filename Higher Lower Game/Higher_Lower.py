@@ -3,55 +3,52 @@ from game_logo import logo,vs
 from game_data import data
 import os
 
-def formatName(account_data):
-  account_name = account_data["name"]
-  account_description = account_data["description"]
-  account_country = account_data["country"]
-  
-  return f"{account_name}, a {account_description}, from {account_country}."
-
-print(logo)
-
-def printLogo():
-  print(logo)
-
 score = 0
-chosen_first_data = random.choice(data)
-
-print(f"Compare A: {formatName(chosen_first_data)}")
-
-print(vs)
-
+# Display Higher Lower art
+print(logo)
 chosen_second_data = random.choice(data)
-print(f"Against B: {formatName(chosen_second_data)}")
+def formatData(account):
+    """Format the data"""
+    account_name = account["name"]
+    account_description = account["description"]
+    account_country = account["country"]
 
-if chosen_first_data == chosen_second_data:
-  chosen_second_data = random.choice(data)
-  
-A = chosen_first_data["follower_count"]
-B = chosen_second_data["follower_count"]
+    return f"{account_name}, a {account_description}, from {account_country}."
 
-is_game_over = False
-while not is_game_over:
-  answer = input("Who has more followers? Type 'A' or 'B': ")
-  if answer == "A" and A>B:
-    score += 1
-    os.system('clear')
-    printLogo()
-    print(f"You're right! Current score: {score}.")
-  
-    chosen_first_data = chosen_second_data.copy()
-    print(f"Compare A: {formatName(chosen_first_data)}")
-  
-    print(vs)
+# Generate a random data from data list
+# Make Game Repeatable
+is_game_over = True
+
+while is_game_over:
+    chosen_first_data = chosen_second_data
     chosen_second_data = random.choice(data)
-
     if chosen_first_data == chosen_second_data:
-      chosen_second_data = random.choice(data)
-      
-    print(f"Against B: {formatName(chosen_second_data)}")
-  else:
-    os.system('clear')
-    printLogo()
-    print(f"Sorry, that's wrong. Final score: {score}")
-    is_game_over = True
+        chosen_second_data = random.choice(data)
+
+    print(f"Compare A: {formatData(chosen_first_data)}")
+    # Display second logo
+    print(vs)
+    print(f"Against B: {formatData(chosen_second_data)}")
+
+    # Ask user to guess whose followers are more and use if statement to check correct
+    guess = input("Who has more followers: Type 'A' or 'B': ").lower()
+    first_follower_count = chosen_first_data["follower_count"]
+    second_follower_count = chosen_second_data["follower_count"]
+    # if user guess correct then clear screen and print You give correct answer
+    # Keep score tracking
+    if first_follower_count > second_follower_count and guess == "a":
+        score += 1
+        os.system('cls')
+        print(logo)
+        print(f"You're right! Current score: {score}.")
+    # if user guess wrong then clear screen print you give wrong answer
+    elif first_follower_count < second_follower_count and guess == "b":
+        score += 1
+        os.system('cls')
+        print(logo)
+        print(f"You're right! Current score: {score}.")
+    else:
+        os.system('cls')
+        print(logo)
+        print(f"Sorry, that's wrong. Final score: {score}.")
+        is_game_over = False
