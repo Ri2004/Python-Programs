@@ -1,4 +1,4 @@
-#######################The Main Logic is#######################
+################################The Main Logic is################################
 
 # here I convert the roman numbers to its equivalent integer number. At first I reversed the roman number entered by user and store some roman value in a dictionary. After reversed the roman number I store the last roman integer in a variable and do iteration through loop and check if the value of second last roman value is less than the last roman value then subtract the value of second last roman value from the total number or result else if the value of second last roman value is greater than the last roman value then add the value of second last roman value to the total number or result
 
