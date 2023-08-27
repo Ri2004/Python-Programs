@@ -1,6 +1,6 @@
-# from replit import clear
 #HINT: You can call clear() to clear the output in the console.
 from art import logo
+import os
 print(logo)
 
 auction ={}
@@ -26,8 +26,9 @@ while not end_bidder:
   auction[bidder_name] = bid_amount
   
   any_other_person = input("Are there any other bidders? Type 'yes or 'no'.\n").lower()
+  os.system('cls')
   if any_other_person == "no":
+    os.system('cls')
     end_bidder = True
 
     find_highest_bid(auction)
-#   clear()
