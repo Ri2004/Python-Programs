@@ -1,6 +1,6 @@
 # Calculator project
 from calculator_art import logo
-from replit import clear
+import os
 print(logo)
 
 def add(n1, n2):
@@ -40,7 +40,7 @@ def calculator():
         if input(f"Type 'y' to calculating with {answer}, or type 'n' to start a new calculation.: ").lower() == 'y':
             num1 = answer
         else:
-            clear()
+            os.system("cls")
             end_calculation = True
             calculator()
 
