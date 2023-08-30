@@ -77,7 +77,7 @@ def make_Coffee(drink_name, order_ingredients):
 
 while not machine_empty:
 
-    choice = input("​What would you like? (espresso/latte/cappuccino): ")
+    choice = input("What would you like? (espresso/latte/cappuccino): ")
     if choice == "off":
         machine_empty = True
 
