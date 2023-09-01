@@ -17,9 +17,6 @@ while not machine_empty:
         money_machine.report()
 
     else:
-        drink = menu.get_items()
-        coffee_name = menu.find_drink(choice)
-        resource_sufficient = coffee_maker.is_resource_sufficient(coffee_name)
-        if resource_sufficient:
-            money_machine.make_payment(coffee_name.cost)
-            coffee_maker.make_coffee(coffee_name)
+        drink = menu.find_drink(choice)
+        if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
+            coffee_maker.make_coffee(drink)
