@@ -7,17 +7,17 @@ print(logo)
 print("Let me think a Number between 1 to 50")
 chosen_number = random.randint(1, 50)
 
-easy_level_attempts = 10
-hard_level_attempts = 5
+EASY_LEVEL_ATTEMPTS = 10
+HARD_LEVEL_ATTEMPTS = 5
 
 def check_level(level):
     if level == 'easy':
-        print(f"You've {easy_level_attempts} attempts to guess the number.")
-        return easy_level_attempts
+        print(f"You've {EASY_LEVEL_ATTEMPTS} attempts to guess the number.")
+        return EASY_LEVEL_ATTEMPTS
     
     elif level == 'hard':
-        print(f"You've {hard_level_attempts} attempts to guess the number.")
-        return hard_level_attempts
+        print(f"You've {HARD_LEVEL_ATTEMPTS} attempts to guess the number.")
+        return HARD_LEVEL_ATTEMPTS
     
     else:
         print("You Chose wrong level")
